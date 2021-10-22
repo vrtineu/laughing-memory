@@ -1,0 +1,242 @@
+ID;Paises
+1;República Popular da China
+2;Índia
+3;Estados Unidos
+4;Indonésia
+5;Brasil
+6;Paquistão
+7;Nigéria
+8;Bangladesh
+9;Rússia
+10;Japão
+11;México
+12;Filipinas
+13;Etiópia
+14;Vietname
+15;Egito
+16;Alemanha
+17;Turquia
+18;Irã
+19;República Democrática do Congo
+20;Tailândia
+21;França
+22;Reino Unido
+23;Itália
+24;Myanmar
+25;Coreia do Sul
+26;África do Sul
+27;Tanzânia
+28;Espanha
+29;Colômbia
+30;Ucrânia
+31;Quênia
+32;Argentina
+33;Polónia
+34;Argélia
+35;Sudão
+36;Uganda
+37;Canadá
+38;Marrocos
+39;Iraque
+40;Afeganistão
+41;Nepal
+42;Peru
+43;Malásia
+44;Uzbequistão
+45;Venezuela
+46;Arábia Saudita
+47;Gana
+48;Coreia do Norte
+49;Iémen/Iêmen
+50;Taiwan
+51;Moçambique
+52;Síria
+53;Madagáscar
+54;Roménia
+55;Austrália
+56;Costa do Marfim
+57;Sri Lanka
+58;Camarões
+59;Países Baixos
+60;Chile
+61;Cazaquistão
+62;Burkina Faso
+63;Níger
+64;Equador
+65;Camboja
+66;Malawi
+67;Senegal
+68;Guatemala
+69;Angola
+70;Mali
+71;Zâmbia
+72;Cuba
+73;Zimbabwe
+74;Grécia
+75;Portugal
+76;Bélgica
+77;Tunísia
+78;República Checa
+79;Ruanda
+80;Chade
+81;Hungria
+82;Guiné
+83;Bielorrússia
+84;Bolívia
+85;Somália
+86;República Dominicana
+87;Suécia
+88;Haiti
+89;Burundi
+90;Benim
+91;Sudão do Sul
+92;Áustria
+93;Azerbaijão
+94;Honduras
+95;Suíça
+96;Sérvia
+97;Bulgária
+98;Tajiquistão
+99;Israel
+100;El Salvador
+101;Hong Kong
+102;Paraguai
+103;Laos
+104;Serra Leoa
+105;Jordânia
+106;Líbia
+107;Papua-Nova Guiné
+108;Togo
+109;Nicarágua
+110;Eritreia
+111;Dinamarca
+112;Eslováquia
+113;Quirguistão
+114;Finlândia
+115;Turquemenistão
+116;Noruega
+117;Geórgia
+118;Emirados Árabes Unidos
+119;Singapura
+120;Bósnia e Herzegovina
+121;Croácia
+122;República Centro-Africana
+123;Moldávia
+124;Costa Rica
+125;Nova Zelândia
+126;Irlanda
+127;Líbano
+128;Porto Rico
+129;República do Congo
+130;Albânia
+131;Lituânia
+132;Uruguai
+133;Libéria
+134;Omã
+135;Panamá
+136;Mauritânia
+137;Mongólia
+138;Arménia
+139;Jamaica
+140;Kuwait
+141;Cisjordânia
+142;Letônia
+143;Lesoto
+144;Namíbia
+145;Macedónia
+146;Eslovênia
+147;Botswana
+148;Kosovo
+149;Gâmbia
+150;Guiné-Bissau
+151;Faixa de Gaza
+152;Gabão
+153;Estónia
+154;Maurícia
+155;Trinidad e Tobago
+156;Suazilândia
+157;Timor-Leste
+158;Fiji
+159;Catar
+160;Chipre
+161;Guiana
+162;Comores
+163;Reunião (França)
+164;Bahrein
+165;Butão
+166;Montenegro
+167;Guiné Equatorial
+168;Ilhas Salomão
+169;Macau (República Popular da China)
+170;Djibouti
+171;Luxemburgo
+172;Guadalupe (França)
+173;Suriname
+174;Martinica (França)
+175;Cabo Verde
+176;Malta
+177;Saara Ocidental
+178;Maldivas
+179;Brunei
+180;Bahamas
+181;Islândia
+182;Belize
+183;Barbados
+184;Polinésia Francesa (França)
+185;Madeira (Portugal)
+186;Açores (Portugal)
+187;Antilhas Holandesas (Países Baixos)
+188;Nova Caledônia (França)
+189;Samoa
+190;Maiote (França)
+191;Vanuatu
+192;São Tomé e Príncipe
+193;Santa Lúcia
+194;Curaçao (Países Baixos)
+195;Tonga
+196;Kiribati
+197;Ilhas Virgens Americanas (Estados Unidos)
+198;Estados Federados da Micronésia
+199;São Vicente e Granadinas
+200;Aruba (Países Baixos)
+201;Jersey (Reino Unido)
+202;Granada
+203;Marianas Setentrionais (Estados Unidos)
+204;Seychelles
+205;Antígua e Barbuda
+206;Andorra
+207;Ilha de Man (Reino Unido)
+208;Dominica
+209;Bermudas (Reino Unido)
+210;Guernesei (Reino Unido)
+211;Samoa Americana (Estados Unidos)
+212;Ilhas Marshall
+213;Gronelândia (Dinamarca)
+214;Ilhas Feroé (Dinamarca)
+215;Ilhas Cayman (Reino Unido)
+216;São Cristóvão e Nevis
+217;Liechtenstein
+218;Mónaco
+219;São Marino
+220;São Martinho (França)
+221;Gibraltar (Reino Unido)
+222;Ilhas Virgens Britânicas (Reino Unido)
+223;Turcas e Caicos (Reino Unido)
+224;Palau
+225;Wallis e Futuna (França)
+226;Anguilla (Reino Unido)
+227;Nauru
+228;Ilhas Cook (Nova Zelândia)
+229;Tuvalu
+230;Santa Helena, Ascensão e Tristão da Cunha (Reino Unido)
+231;São Pedro e Miquelão (França)
+232;Montserrat (Reino Unido)
+233;Ilhas Malvinas ou Malvinas (Reino Unido)
+234;Svalbard e Jan Mayen (Noruega)
+235;Niue (Nova Zelândia)
+236;Ilha Norfolk (Austrália)
+237;Toquelau (Nova Zelândia)
+238;Vaticano
+239;Ilhas Cocos (Keeling) (Austrália)
+240;Ilha do Natal (Austrália)
+241;Pitcairn (Reino Unido)
