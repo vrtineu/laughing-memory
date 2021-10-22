@@ -58,6 +58,33 @@ typedef struct atletas {
 };
 struct atletas atl;
 
+/* Listar atletas */
+void listar_atletas () {
+    FILE* banco_atletas;
+
+    char row[MAX];
+    char *tester[MAX];
+
+    banco_atletas = fopen (".//banco-de-dados//atletas.txt", "r");
+    if (banco_atletas == NULL) {
+        printf ("Erro ao abrir arquivo\n");
+        exit (1);
+    }
+    while (!feof (banco_atletas)) {
+        fscanf (banco_atletas, "%d;%s;%s;%s\n", &atl.id_atleta, &row);
+        *tester = strtok (row, ";");
+        printf ("id: %d\nnome: %s\n", atl.id_atleta, *tester);
+        *tester = strtok (NULL, ";");
+        printf ("pais: %s\n", *tester);
+        *tester = strtok (NULL, ";");
+        printf ("modalidade: %s\n", *tester);
+    }
+    fclose (banco_atletas);
+    system ("pause");
+    menu_atletas ();
+}
+
+/* Menu de opção para atletas */
 void menu_atletas () {
     system ("cls");
 
@@ -79,11 +106,11 @@ void menu_atletas () {
         printf ("Escolha uma opcao: ");
         fflush (stdin);
         scanf ("%d", &escolha_atletas);
-        
+
         if (escolha_atletas >= 1 && escolha_atletas <= 4) {
             switch (escolha_atletas) {
-                case 1: 
-                    // listar_atletas ();
+                case 1:
+                    listar_atletas ();
                     break;
 
                 case 2:
@@ -93,9 +120,9 @@ void menu_atletas () {
                 case 3:
                     // cadastrar_atleta ();
                     break;
-                
+
                 case 4:
-                    main();
+                    main ();
                     break;
             }
         } else {
