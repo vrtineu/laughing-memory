@@ -117,27 +117,39 @@ void cadastrar_atleta () {
     printf ("Digite o nome do atleta: ");
     fgets (atl.nome, MAX, stdin); /* Lê a string até o \n */
 
-    fflush (stdin); /* Limpa o buffer de entrada */
-    gotoxy (27, 15);
-    printf ("Digite o ultimo nome do atleta: ");
-    fgets (atl.ultimo_nome, MAX, stdin); /* Lê a string até o \n */
+    for (int i = 0; i < strlen (atl.nome); i++) { /* Replace de space bar para under score */
+        if (atl.nome[i] == ' ') {
+            atl.nome[i] = '_';
+        }
+    }
 
     fflush (stdin); /* Limpa o buffer de entrada */
     gotoxy (27, 16);
     printf ("Digite o pais do atleta: ");
     fgets (atl.pais, MAX, stdin); /* Lê a string até o \n */
 
+    for (int i = 0; i < strlen (atl.pais); i++) { /* Replace de space bar para under score */
+        if (atl.pais[i] == ' ') {
+            atl.pais[i] = '_';
+        }
+    }
+
     fflush (stdin); /* Limpa o buffer de entrada */
     gotoxy (27, 17);
     printf ("Digite a modalidade do atleta: ");
     fgets (atl.modalidade, MAX, stdin); /* Lê a string até o \n */
 
+    for (int i = 0; i < strlen (atl.modalidade); i++) { /* Replace de space bar para under score */
+        if (atl.modalidade[i] == ' ') {
+            atl.modalidade[i] = '_';
+        }
+    }
+
     atl.nome[strlen (atl.nome) - 1] = '\0'; /* Remove o \n do final da string */
-    atl.ultimo_nome[strlen (atl.ultimo_nome) - 1] = '\0'; /* Remove o \n do final da string */
     atl.pais[strlen (atl.pais) - 1] = '\0'; /* Remove o \n do final da string */
     atl.modalidade[strlen (atl.modalidade) - 1] = '\0'; /* Remove o \n do final da string */
 
-    fprintf (banco_atletas, "\n%d;%s;%s;%s;%s", novo_id, atl.nome, atl.ultimo_nome, atl.pais, atl.modalidade); /* Escreve no arquivo */
+    fprintf (banco_atletas, "\n%d;%s;%s;%s", novo_id, atl.nome, atl.pais, atl.modalidade); /* Escreve no arquivo */
     fclose (banco_atletas);
     system ("cls");
     menu_atletas ();
@@ -173,17 +185,31 @@ void listar_atletas () {
         *coluna = strtok (linha, ";"); /* Separa a string em colunas guardando o ID e o primeiro nome */
         gotoxy (30, 14);
         printf ("ID: %d\n", atl.id_atleta); /* Imprime o id */
+
         gotoxy (30, 15);
+        for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
+            if (coluna[0][i] == '_') {
+                coluna[0][i] = ' ';
+            }
+        }
         printf ("Nome: %s ", *coluna); /* Imprime o nome */
-        *coluna = strtok (NULL, ";"); /* Separa a string em colunas guardando o ultimo nome */
-        printf ("%s\n", *coluna); /* Imprime o ultimo nome */
 
         *coluna = strtok (NULL, ";"); /* Separa a string em colunas guardando o pais */
         gotoxy (30, 16);
+        for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
+            if (coluna[0][i] == '_') {
+                coluna[0][i] = ' ';
+            }
+        }
         printf ("Pais: %s\n", *coluna); /* Imprime o pais */
 
         *coluna = strtok (NULL, ";"); /* Separa a string em colunas guardando a modalidade */
         gotoxy (30, 17);
+        for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
+            if (coluna[0][i] == '_') {
+                coluna[0][i] = ' ';
+            }
+        }
         printf ("Modalidade: %s\n", *coluna); /* Imprime a modalidade */
 
         gotoxy (30, 20);
@@ -400,21 +426,21 @@ int main () {
                 case 2: /* Ranking */
                     system ("cls");
                     gotoxy (30, 21);
-                    printf ("ranking");
+                    printf ("ranking (WIP)");
                     // menu_ranking ();
                     break;
 
                 case 3: /* Calendário */
                     system ("cls");
                     gotoxy (30, 21);
-                    printf ("calendario");
+                    printf ("calendario (WIP)");
                     // menu_calendario ();
                     break;
 
                 case 4: /* Dados do usuário */
                     system ("cls");
                     gotoxy (30, 21);
-                    printf ("user");
+                    printf ("user (WIP)");
                     // mostrar_dados_usuario ();
                     break;
             }
