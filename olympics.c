@@ -15,6 +15,7 @@ typedef struct paises {
     int medalha_prata; /* Numero de medalhas de prata */
     int medalha_bronze; /* Numero de medalhas de bronze */
     int total_medalhas; /* Total de medalhas */
+    int pontuacao; /* Pontuacao do pais */
 };
 struct paises pai;
 
@@ -372,7 +373,179 @@ void menu_atletas () {
 }
 
 void menu_ranking () {
+    system ("cls");
 
+    int escolha_ranking;
+
+    while (escolha_ranking != 3) {
+        cabecalho ();
+        gotoxy (30, 12);
+        printf ("* MENU RANKING *");
+        gotoxy (30, 14);
+        printf ("[1] RANKING DE PAISES\n");
+        gotoxy (30, 15);
+        printf ("[2] ATRIBUICAO DE MEDALHAS\n");
+        gotoxy (30, 16);
+        printf ("[3] VOLTAR PARA O MENU PRINCIPAL\n");
+        gotoxy (30, 17);
+        printf ("Escolha uma opcao: ");
+        fflush (stdin);
+        scanf ("%d", &escolha_ranking);
+
+        if (escolha_ranking >= 1 && escolha_ranking <= 2) { /* Se a opção for entre 1 e 2 */
+            switch (escolha_ranking) { /* Escolha a opção */
+                case 1: /* Ranking de paises */
+                    system ("cls");
+                    ranking_paises ();
+                    break;
+
+                case 2: /* Atribuição de medalhas */
+                    system ("cls");
+                    atribuicao_medalhas ();
+                    break;
+
+                case 3: /* Voltar ao menu principal */
+                    system ("cls");
+                    main ();
+                    break;
+            }
+        } else { /* Se a opção for inválida */
+            system ("cls");
+            gotoxy (30, 19);
+            printf ("Opcao invalida, tente novamente\n");
+        }
+    }
+}
+
+/* Função para edição de medalhas de paises */
+void atribuicao_medalhas () {
+    system ("cls");
+
+    FILE* banco_paises;
+
+    int id_edicao = 0;
+    char* coluna[100];
+    char linha[100];
+    int escolha_edicao;
+
+    cabecalho ();
+
+    gotoxy (30, 12);
+    printf ("* ATRIBUICAO DE MEDALHAS *");
+    gotoxy (30, 14);
+    printf ("Digite o ID do pais: ");
+    fflush (stdin);
+    scanf ("%d", &id_edicao);
+
+    system ("cls");
+    cabecalho ();
+    gotoxy (30, 12);
+    printf ("* ATRIBUICAO DE MEDALHAS *");
+    gotoxy (30, 14);
+    printf ("QUAL MEDALHA QUE DESEJA ALTERAR?");
+    gotoxy (30, 16);
+    printf ("[1] Ouro\n");
+    gotoxy (30, 17);
+    printf ("[2] Prata\n");
+    gotoxy (30, 18);
+    printf ("[3] Bronze\n");
+    gotoxy (30, 20);
+    printf ("Escolha uma opcao: ");
+    fflush (stdin);
+    scanf ("%d", &escolha_edicao);
+
+    system ("cls");
+    cabecalho ();
+    gotoxy (30, 12);
+    printf ("* ATRIBUICAO DE MEDALHAS *");
+
+    banco_paises = fopen (".//banco-de-dados//paises.txt", "r+"); /* Abre o arquivo paises.txt */
+    if (banco_paises == NULL) { /* Se o arquivo não for encontrado */
+        gotoxy (30, 14);
+        printf ("Arquivo nao encontrado\n");
+        gotoxy (20, 17);
+        system ("pause");
+        system ("cls");
+        menu_ranking ();
+    }
+
+    while (!feof (banco_paises)) {
+        fscanf (banco_paises, "%d;%s", &pai.id_pais, &linha); /* Lê a linha */
+        if (pai.id_pais == id_edicao) { /* Se o id for igual ao id digitado */
+            *coluna = strtok (linha, ";"); /* Separa a linha em colunas */
+            for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
+                if (coluna[0][i] == '_') {
+                    coluna[0][i] = ' ';
+                }
+            }
+            gotoxy (30, 14);
+            printf ("Pais: %s", coluna[0]); /* Imprime o nome do pais */
+
+            switch (escolha_edicao) { /* Escolha a opção */
+                case 1: /* Ouro */
+                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
+                    gotoxy (30, 16);
+                    printf ("Medalhas de ouro atual: %d", atoi (coluna[0])); /* Imprime a quantidade de medalhas de ouro */
+                    gotoxy (30, 18);
+                    printf ("Digite a nova quantidade de medalhas de ouro: ");
+                    fflush (stdin);
+                    scanf ("%d", &pai.medalha_ouro); /* Recebe a nova quantidade de medalhas de ouro */
+                    break;
+
+                case 2: /* Prata */
+                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
+                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
+                    gotoxy (30, 16);
+                    printf ("Medalhas de prata atual: %d", atoi (coluna[0])); /* Imprime a quantidade de medalhas de prata */
+                    gotoxy (30, 18);
+                    printf ("Digite a nova quantidade de medalhas de prata: ");
+                    fflush (stdin);
+                    scanf ("%d", &pai.medalha_prata); /* Recebe a nova quantidade de medalhas de prata */
+                    break;
+                
+                case 3: /* Bronze */
+                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
+                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
+                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
+                    gotoxy (30, 16);
+                    printf ("Medalhas de bronze atual: %d", atoi (coluna[0])); /* Imprime a quantidade de medalhas de bronze */
+                    gotoxy (30, 18);
+                    printf ("Digite a nova quantidade de medalhas de bronze: ");
+                    fflush (stdin);
+                    scanf ("%d", &pai.medalha_bronze); /* Recebe a nova quantidade de medalhas de bronze */
+                    break;
+            }
+            break;
+        }
+    }
+
+    fclose (banco_paises); /* Fecha o arquivo */
+}
+
+/* Exibe o ranking de paises pela pontuação */
+void ranking_paises () {
+    FILE* paises;
+
+    cabecalho ();
+    gotoxy (30, 19);
+
+    paises = fopen (".//banco-de-dados//paises.txt", "r"); /* Abre o arquivo de paises */
+
+    if (paises == NULL) { // Se o arquivo não existir, cria-o
+        system ("cls");
+        cabecalho ();
+        gotoxy (27, 14);
+        printf ("Erro ao abrir banco de dados.\n");
+        gotoxy (27, 15);
+        printf ("Novo arquivo criado, tente novamente.\n");
+        paises = fopen (".//banco-de-dados//paises.txt", "w"); /* Cria o arquivo */
+        fclose (paises);
+        gotoxy (20, 17);
+        system ("pause");
+        menu_atletas ();
+    }
+
+    fclose (paises); /* Fecha o arquivo */
 }
 
 void menu_calendario () {
@@ -426,8 +599,7 @@ int main () {
                 case 2: /* Ranking */
                     system ("cls");
                     gotoxy (30, 21);
-                    printf ("ranking (WIP)");
-                    // menu_ranking ();
+                    menu_ranking ();
                     break;
 
                 case 3: /* Calendário */

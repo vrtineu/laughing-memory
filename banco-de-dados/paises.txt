@@ -1,241 +1,241 @@
-1;Republica Popular da China
-2;India
-3;Estados Unidos
-4;Indonesia
-5;Brasil
-6;Paquistao
-7;Nigeria
-8;Bangladesh
-9;Russia
-10;Japao
-11;Mexico
-12;Filipinas
-13;Etiopia
-14;Vietname
-15;Egito
-16;Alemanha
-17;Turquia
-18;Ira
-19;Republica Democratica do Congo
-20;Tailandia
-21;Franca
-22;Reino Unido
-23;Italia
-24;Myanmar
-25;Coreia do Sul
-26;Africa do Sul
-27;Tanzania
-28;Espanha
-29;Colombia
-30;Ucrania
-31;Quenia
-32;Argentina
-33;Polonia
-34;Argelia
-35;Sudao
-36;Uganda
-37;Canada
-38;Marrocos
-39;Iraque
-40;Afeganistao
-41;Nepal
-42;Peru
-43;Malasia
-44;Uzbequistao
-45;Venezuela
-46;Arabia Saudita
-47;Gana
-48;Coreia do Norte
-49;Iemen
-50;Taiwan
-51;Mocambique
-52;Siria
-53;Madagascar
-54;Romenia
-55;Australia
-56;Costa do Marfim
-57;Sri Lanka
-58;Camaroes
-59;Paises Baixos
-60;Chile
-61;Cazaquistao
-62;Burkina Faso
-63;Niger
-64;Equador
-65;Camboja
-66;Malawi
-67;Senegal
-68;Guatemala
-69;Angola
-70;Mali
-71;Zambia
-72;Cuba
-73;Zimbabwe
-74;Grecia
-75;Portugal
-76;Belgica
-77;Tunisia
-78;Republica Checa
-79;Ruanda
-80;Chade
-81;Hungria
-82;Guine
-83;Bielorrussia
-84;Bolivia
-85;Somalia
-86;Republica Dominicana
-87;Suecia
-88;Haiti
-89;Burundi
-90;Benim
-91;Sudao do Sul
-92;Austria
-93;Azerbaijao
-94;Honduras
-95;Suica
-96;Servia
-97;Bulgaria
-98;Tajiquistao
-99;Israel
-100;El Salvador
-101;Hong Kong
-102;Paraguai
-103;Laos
-104;Serra Leoa
-105;Jordania
-106;Libia
-107;Papua-Nova Guine
-108;Togo
-109;Nicaragua
-110;Eritreia
-111;Dinamarca
-112;Eslovaquia
-113;Quirguistao
-114;Finlandia
-115;Turquemenistao
-116;Noruega
-117;Georgia
-118;Emirados Arabes Unidos
-119;Singapura
-120;Bosnia e Herzegovina
-121;Croacia
-122;Republica Centro-Africana
-123;Moldavia
-124;Costa Rica
-125;Nova Zelandia
-126;Irlanda
-127;Libano
-128;Porto Rico
-129;Republica do Congo
-130;Albania
-131;Lituania
-132;Uruguai
-133;Liberia
-134;Oma
-135;Panama
-136;Mauritania
-137;Mongolia
-138;Armenia
-139;Jamaica
-140;Kuwait
-141;Cisjordania
-142;Letonia
-143;Lesoto
-144;Namibia
-145;Macedonia
-146;Eslovenia
-147;Botswana
-148;Kosovo
-149;Gambia
-150;Guine-Bissau
-151;Faixa de Gaza
-152;Gabao
-153;Estonia
-154;Mauricia
-155;Trinidad e Tobago
-156;Suazilandia
-157;Timor-Leste
-158;Fiji
-159;Catar
-160;Chipre
-161;Guiana
-162;Comores
-163;Reuniao (Franca)
-164;Bahrein
-165;Butao
-166;Montenegro
-167;Guine Equatorial
-168;Ilhas Salomao
-169;Macau (Republica Popular da China)
-170;Djibouti
-171;Luxemburgo
-172;Guadalupe (Franca)
-173;Suriname
-174;Martinica (Franca)
-175;Cabo Verde
-176;Malta
-177;Saara Ocidental
-178;Maldivas
-179;Brunei
-180;Bahamas
-181;Islandia
-182;Belize
-183;Barbados
-184;Polinesia Francesa (Franca)
-185;Madeira (Portugal)
-186;Acores (Portugal)
-187;Antilhas Holandesas (Paises Baixos)
-188;Nova Caledonia (Franca)
-189;Samoa
-190;Maiote (Franca)
-191;Vanuatu
-192;Sao Tome e Principe
-193;Santa Lucia
-194;Curacao (Paises Baixos)
-195;Tonga
-196;Kiribati
-197;Ilhas Virgens Americanas (Estados Unidos)
-198;Estados Federados da Micronesia
-199;Sao Vicente e Granadinas
-200;Aruba (Paises Baixos)
-201;Jersey (Reino Unido)
-202;Granada
-203;Marianas Setentrionais (Estados Unidos)
-204;Seychelles
-205;Antigua e Barbuda
-206;Andorra
-207;Ilha de Man (Reino Unido)
-208;Dominica
-209;Bermudas (Reino Unido)
-210;Guernesei (Reino Unido)
-211;Samoa Americana (Estados Unidos)
-212;Ilhas Marshall
-213;Gronelandia (Dinamarca)
-214;Ilhas Faroe (Dinamarca)
-215;Ilhas Cayman (Reino Unido)
-216;Sao Cristovao e Nevis
-217;Liechtenstein
-218;Monaco
-219;Sao Marino
-220;Sao Martinho (Franca)
-221;Gibraltar (Reino Unido)
-222;Ilhas Virgens Britanicas (Reino Unido)
-223;Turcas e Caicos (Reino Unido)
-224;Palau
-225;Wallis e Futuna (Franca)
-226;Anguilla (Reino Unido)
-227;Nauru
-228;Ilhas Cook (Nova Zelandia)
-229;Tuvalu
-230;Santa Helena, Ascensao e Tristao da Cunha (Reino Unido)
-231;Sao Pedro e Miquelao (Franca)
-232;Montserrat (Reino Unido)
-233;Ilhas Malvinas ou Malvinas (Reino Unido)
-234;Svalbard e Jan Mayen (Noruega)
-235;Niue (Nova Zelandia)
-236;Ilha Norfolk (Australia)
-237;Toquelau (Nova Zelandia)
-238;Vaticano
-239;Ilhas Cocos (Keeling) (Australia)
-240;Ilha do Natal (Australia)
-241;Pitcairn (Reino Unido)
+1;Republica_Popular_da_China;0;0;0;0;0
+2;India;0;0;0;0;0
+3;Estados_Unidos;5;6;7;15;18
+4;Indonesia;0;0;0;0;0
+5;Brasil;0;0;0;0;0
+6;Paquistao;0;0;0;0;0
+7;Nigeria;0;0;0;0;0
+8;Bangladesh;0;0;0;0;0
+9;Russia;0;0;0;0;0
+10;Japao;0;0;0;0;0
+11;Mexico;0;0;0;0;0
+12;Filipinas;0;0;0;0;0
+13;Etiopia;0;0;0;0;0
+14;Vietname;0;0;0;0;0
+15;Egito;0;0;0;0;0
+16;Alemanha;0;0;0;0;0
+17;Turquia;0;0;0;0;0
+18;Ira;0;0;0;0;0
+19;Republica_Democratica_do_Congo;0;0;0;0;0
+20;Tailandia;0;0;0;0;0
+21;Franca;0;0;0;0;0
+22;Reino_Unido;0;0;0;0;0
+23;Italia;0;0;0;0;0
+24;Myanmar;0;0;0;0;0
+25;Coreia_do_Sul;0;0;0;0;0
+26;Africa_do_Sul;0;0;0;0;0
+27;Tanzania;0;0;0;0;0
+28;Espanha;0;0;0;0;0
+29;Colombia;0;0;0;0;0
+30;Ucrania;0;0;0;0;0
+31;Quenia;0;0;0;0;0
+32;Argentina;0;0;0;0;0
+33;Polonia;0;0;0;0;0
+34;Argelia;0;0;0;0;0
+35;Sudao;0;0;0;0;0
+36;Uganda;0;0;0;0;0
+37;Canada;0;0;0;0;0
+38;Marrocos;0;0;0;0;0
+39;Iraque;0;0;0;0;0
+40;Afeganistao;0;0;0;0;0
+41;Nepal;0;0;0;0;0
+42;Peru;0;0;0;0;0
+43;Malasia;0;0;0;0;0
+44;Uzbequistao;0;0;0;0;0
+45;Venezuela;0;0;0;0;0
+46;Arabia_Saudita;0;0;0;0;0
+47;Gana;0;0;0;0;0
+48;Coreia_do_Norte;0;0;0;0;0
+49;Iemen;0;0;0;0;0
+50;Taiwan;0;0;0;0;0
+51;Mocambique;0;0;0;0;0
+52;Siria;0;0;0;0;0
+53;Madagascar;0;0;0;0;0
+54;Romenia;0;0;0;0;0
+55;Australia;0;0;0;0;0
+56;Costa_do_Marfim;0;0;0;0;0
+57;Sri_Lanka;0;0;0;0;0
+58;Camaroes;0;0;0;0;0
+59;Paises_Baixos;0;0;0;0;0
+60;Chile;0;0;0;0;0
+61;Cazaquistao;0;0;0;0;0
+62;Burkina_Faso;0;0;0;0;0
+63;Niger;0;0;0;0;0
+64;Equador;0;0;0;0;0
+65;Camboja;0;0;0;0;0
+66;Malawi;0;0;0;0;0
+67;Senegal;0;0;0;0;0
+68;Guatemala;0;0;0;0;0
+69;Angola;0;0;0;0;0
+70;Mali;0;0;0;0;0
+71;Zambia;0;0;0;0;0
+72;Cuba;0;0;0;0;0
+73;Zimbabwe;0;0;0;0;0
+74;Grecia;0;0;0;0;0
+75;Portugal;0;0;0;0;0
+76;Belgica;0;0;0;0;0
+77;Tunisia;0;0;0;0;0
+78;Republica_Checa;0;0;0;0;0
+79;Ruanda;0;0;0;0;0
+80;Chade;0;0;0;0;0
+81;Hungria;0;0;0;0;0
+82;Guine;0;0;0;0;0
+83;Bielorrussia;0;0;0;0;0
+84;Bolivia;0;0;0;0;0
+85;Somalia;0;0;0;0;0
+86;Republica_Dominicana;0;0;0;0;0
+87;Suecia;0;0;0;0;0
+88;Haiti;0;0;0;0;0
+89;Burundi;0;0;0;0;0
+90;Benim;0;0;0;0;0
+91;Sudao_do_Sul;0;0;0;0;0
+92;Austria;0;0;0;0;0
+93;Azerbaijao;0;0;0;0;0
+94;Honduras;0;0;0;0;0
+95;Suica;0;0;0;0;0
+96;Servia;0;0;0;0;0
+97;Bulgaria;0;0;0;0;0
+98;Tajiquistao;0;0;0;0;0
+99;Israel;0;0;0;0;0
+100;El_Salvador;0;0;0;0;0
+101;Hong_Kong;0;0;0;0;0
+102;Paraguai;0;0;0;0;0
+103;Laos;0;0;0;0;0
+104;Serra_Leoa;0;0;0;0;0
+105;Jordania;0;0;0;0;0
+106;Libia;0;0;0;0;0
+107;Papua-Nova_Guine;0;0;0;0;0
+108;Togo;0;0;0;0;0
+109;Nicaragua;0;0;0;0;0
+110;Eritreia;0;0;0;0;0
+111;Dinamarca;0;0;0;0;0
+112;Eslovaquia;0;0;0;0;0
+113;Quirguistao;0;0;0;0;0
+114;Finlandia;0;0;0;0;0
+115;Turquemenistao;0;0;0;0;0
+116;Noruega;0;0;0;0;0
+117;Georgia;0;0;0;0;0
+118;Emirados_Arabes_Unidos;0;0;0;0;0
+119;Singapura;0;0;0;0;0
+120;Bosnia_e_Herzegovina;0;0;0;0;0
+121;Croacia;0;0;0;0;0
+122;Republica_Centro-Africana;0;0;0;0;0
+123;Moldavia;0;0;0;0;0
+124;Costa_Rica;0;0;0;0;0
+125;Nova_Zelandia;0;0;0;0;0
+126;Irlanda;0;0;0;0;0
+127;Libano;0;0;0;0;0
+128;Porto_Rico;0;0;0;0;0
+129;Republica_do_Congo;0;0;0;0;0
+130;Albania;0;0;0;0;0
+131;Lituania;0;0;0;0;0
+132;Uruguai;0;0;0;0;0
+133;Liberia;0;0;0;0;0
+134;Oma;0;0;0;0;0
+135;Panama;0;0;0;0;0
+136;Mauritania;0;0;0;0;0
+137;Mongolia;0;0;0;0;0
+138;Armenia;0;0;0;0;0
+139;Jamaica;0;0;0;0;0
+140;Kuwait;0;0;0;0;0
+141;Cisjordania;0;0;0;0;0
+142;Letonia;0;0;0;0;0
+143;Lesoto;0;0;0;0;0
+144;Namibia;0;0;0;0;0
+145;Macedonia;0;0;0;0;0
+146;Eslovenia;0;0;0;0;0
+147;Botswana;0;0;0;0;0
+148;Kosovo;0;0;0;0;0
+149;Gambia;0;0;0;0;0
+150;Guine-Bissau;0;0;0;0;0
+151;Faixa_de_Gaza;0;0;0;0;0
+152;Gabao;0;0;0;0;0
+153;Estonia;0;0;0;0;0
+154;Mauricia;0;0;0;0;0
+155;Trinidad_e_Tobago;0;0;0;0;0
+156;Suazilandia;0;0;0;0;0
+157;Timor-Leste;0;0;0;0;0
+158;Fiji;0;0;0;0;0
+159;Catar;0;0;0;0;0
+160;Chipre;0;0;0;0;0
+161;Guiana;0;0;0;0;0
+162;Comores;0;0;0;0;0
+163;Reuniao_(Franca);0;0;0;0;0
+164;Bahrein;0;0;0;0;0
+165;Butao;0;0;0;0;0
+166;Montenegro;0;0;0;0;0
+167;Guine_Equatorial;0;0;0;0;0
+168;Ilhas_Salomao;0;0;0;0;0
+169;Macau_(Republica_Popular_da_China);0;0;0;0;0
+170;Djibouti;0;0;0;0;0
+171;Luxemburgo;0;0;0;0;0
+172;Guadalupe_(Franca);0;0;0;0;0
+173;Suriname;0;0;0;0;0
+174;Martinica_(Franca);0;0;0;0;0
+175;Cabo_Verde;0;0;0;0;0
+176;Malta;0;0;0;0;0
+177;Saara_Ocidental;0;0;0;0;0
+178;Maldivas;0;0;0;0;0
+179;Brunei;0;0;0;0;0
+180;Bahamas;0;0;0;0;0
+181;Islandia;0;0;0;0;0
+182;Belize;0;0;0;0;0
+183;Barbados;0;0;0;0;0
+184;Polinesia_Francesa_(Franca);0;0;0;0;0
+185;Madeira_(Portugal);0;0;0;0;0
+186;Acores_(Portugal);0;0;0;0;0
+187;Antilhas_Holandesas_(Paises_Baixos);0;0;0;0;0
+188;Nova_Caledonia_(Franca);0;0;0;0;0
+189;Samoa;0;0;0;0;0
+190;Maiote_(Franca);0;0;0;0;0
+191;Vanuatu;0;0;0;0;0
+192;Sao_Tome_e_Principe;0;0;0;0;0
+193;Santa_Lucia;0;0;0;0;0
+194;Curacao_(Paises_Baixos);0;0;0;0;0
+195;Tonga;0;0;0;0;0
+196;Kiribati;0;0;0;0;0
+197;Ilhas_Virgens_Americanas_(Estados_Unidos);0;0;0;0;0
+198;Estados_Federados_da_Micronesia;0;0;0;0;0
+199;Sao_Vicente_e_Granadinas;0;0;0;0;0
+200;Aruba_(Paises_Baixos);0;0;0;0;0
+201;Jersey_(Reino_Unido);0;0;0;0;0
+202;Granada;0;0;0;0;0
+203;Marianas_Setentrionais_(Estados_Unidos);0;0;0;0;0
+204;Seychelles;0;0;0;0;0
+205;Antigua_e_Barbuda;0;0;0;0;0
+206;Andorra;0;0;0;0;0
+207;Ilha_de_Man_(Reino_Unido);0;0;0;0;0
+208;Dominica;0;0;0;0;0
+209;Bermudas_(Reino_Unido);0;0;0;0;0
+210;Guernesei_(Reino_Unido);0;0;0;0;0
+211;Samoa_Americana_(Estados_Unidos);0;0;0;0;0
+212;Ilhas_Marshall;0;0;0;0;0
+213;Gronelandia_(Dinamarca);0;0;0;0;0
+214;Ilhas_Faroe_(Dinamarca);0;0;0;0;0
+215;Ilhas_Cayman_(Reino_Unido);0;0;0;0;0
+216;Sao_Cristovao_e_Nevis;0;0;0;0;0
+217;Liechtenstein;0;0;0;0;0
+218;Monaco;0;0;0;0;0
+219;Sao_Marino;0;0;0;0;0
+220;Sao_Martinho_(Franca);0;0;0;0;0
+221;Gibraltar_(Reino_Unido);0;0;0;0;0
+222;Ilhas_Virgens_Britanicas_(Reino_Unido);0;0;0;0;0
+223;Turcas_e_Caicos_(Reino_Unido);0;0;0;0;0
+224;Palau;0;0;0;0;0
+225;Wallis_e_Futuna_(Franca);0;0;0;0;0
+226;Anguilla_(Reino_Unido);0;0;0;0;0
+227;Nauru;0;0;0;0;0
+228;Ilhas_Cook_(Nova_Zelandia);0;0;0;0;0
+229;Tuvalu;0;0;0;0;0
+230;Santa_Helena_Ascensao_e_Tristao_da_Cunha_(Reino_Unido);0;0;0;0;0
+231;Sao_Pedro_e_Miquelao_(Franca);0;0;0;0;0
+232;Montserrat_(Reino_Unido);0;0;0;0;0
+233;Ilhas_Malvinas_ou_Malvinas_(Reino_Unido);0;0;0;0;0
+234;Svalbard_e_Jan_Mayen_(Noruega);0;0;0;0;0
+235;Niue_(Nova_Zelandia);0;0;0;0;0
+236;Ilha_Norfolk_(Australia);0;0;0;0;0
+237;Toquelau_(Nova_Zelandia);0;0;0;0;0
+238;Vaticano;0;0;0;0;0
+239;Ilhas_Cocos_(Keeling)_(Australia);0;0;0;0;0
+240;Ilha_do_Natal_(Australia);0;0;0;0;0
+241;Pitcairn_(Reino_Unido);0;0;0;0;0
