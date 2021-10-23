@@ -7,5 +7,3 @@
 7;joiciane;vantine;argelia;arco
 8;vinicius_tineu;tineu;brasil;futebol
 9;livia_pimentel;brasil;corrida
-10;vinicius_rodrigues_tineu;egito;comedor
-11;luca_simaque_souza;nova_zelandia;salto_com_vara
