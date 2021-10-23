@@ -113,7 +113,7 @@ void cadastrar_atleta () {
     atl.pais[strlen (atl.pais) - 1] = '\0';
     atl.modalidade[strlen (atl.modalidade) - 1] = '\0';
 
-    fprintf (banco_atletas, "%d;%s;%s;%s;%s", novo_id, atl.nome, atl.ultimo_nome, atl.pais, atl.modalidade);
+    fprintf (banco_atletas, "\n%d;%s;%s;%s;%s", novo_id, atl.nome, atl.ultimo_nome, atl.pais, atl.modalidade);
     fclose (banco_atletas);
     system ("cls");
     menu_atletas ();
@@ -127,7 +127,7 @@ void listar_atletas () {
     char* coluna[MAX];
 
     cabecalho ();
-    
+
     banco_atletas = fopen (".//banco-de-dados//atletas.txt", "r");
     if (banco_atletas == NULL) {
         printf ("Erro ao abrir arquivo\n");
@@ -176,6 +176,75 @@ void listar_atletas () {
     }
 }
 
+/* Procurar atletas pelo id. */
+void buscar_atleta_id () {
+    FILE* banco_atletas;
+
+    char linha[MAX];
+    char* coluna[MAX];
+    int id_busca;
+
+pesquisar:
+    cabecalho ();
+
+    gotoxy (30, 14);
+    printf ("Digite o id do atleta: ");
+    fflush (stdin);
+    scanf ("%d", &id_busca);
+    system ("cls");
+    
+    cabecalho ();
+
+    banco_atletas = fopen (".//banco-de-dados//atletas.txt", "r");
+    if (banco_atletas == NULL) {
+        printf ("Erro ao abrir arquivo\n");
+        exit (1);
+    }
+
+    while (!feof (banco_atletas)) {
+        fscanf (banco_atletas, "%d;%s;%s;%s\n", &atl.id_atleta, &linha);
+
+        if (id_busca == atl.id_atleta) {
+            *coluna = strtok (linha, ";");
+            gotoxy (30, 14);
+            printf ("ID: %d\n", atl.id_atleta);
+            gotoxy (30, 15);
+            printf ("Nome: %s ", *coluna);
+            *coluna = strtok (NULL, ";");
+            printf ("%s\n", *coluna);
+
+            *coluna = strtok (NULL, ";");
+            gotoxy (30, 16);
+            printf ("Pais: %s\n", *coluna);
+
+            *coluna = strtok (NULL, ";");
+            gotoxy (30, 17);
+            printf ("Modalidade: %s\n", *coluna);
+
+            gotoxy (30, 20);
+            printf ("Deseja buscar outro atleta?");
+            gotoxy (30, 21);
+            printf ("'S' para continuar\n");
+            gotoxy (30, 22);
+            printf ("'N' para voltar ao menu\n");
+            gotoxy (30, 23);
+            printf ("Digite a opcao: ");
+            fflush (stdin);
+            char escolha = getche ();
+            if (escolha == 'N' || escolha == 'n') {
+                fclose (banco_atletas);
+                menu_atletas ();
+            } else {
+                system ("cls");
+                goto pesquisar;
+            }
+        } else {
+            continue;
+        }
+    }
+    fclose (banco_atletas);
+}
+
 /* Menu de opção para atletas */
 void menu_atletas () {
     system ("cls");
@@ -207,7 +276,8 @@ void menu_atletas () {
                     break;
 
                 case 2:
-                    // buscar_atleta ();
+                    system ("cls");
+                    buscar_atleta_id ();
                     break;
 
                 case 3:

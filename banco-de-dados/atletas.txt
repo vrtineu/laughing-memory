@@ -2,3 +2,4 @@
 2;luca;simaque;mexico;natacao
 3;vinicius;silva;turcomenistao;hipismo
 4;lucas;ferreira;cazaquistao;futebol
+5;eduardo;assis;canada;arremesso
