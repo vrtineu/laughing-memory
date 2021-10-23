@@ -124,7 +124,7 @@ void cadastrar_atleta () {
     }
 
     fflush (stdin); /* Limpa o buffer de entrada */
-    gotoxy (27, 16);
+    gotoxy (27, 15);
     printf ("Digite o pais do atleta: ");
     fgets (atl.pais, MAX, stdin); /* Lê a string até o \n */
 
@@ -135,7 +135,7 @@ void cadastrar_atleta () {
     }
 
     fflush (stdin); /* Limpa o buffer de entrada */
-    gotoxy (27, 17);
+    gotoxy (27, 16);
     printf ("Digite a modalidade do atleta: ");
     fgets (atl.modalidade, MAX, stdin); /* Lê a string até o \n */
 
@@ -186,30 +186,30 @@ void listar_atletas () {
         gotoxy (30, 14);
         printf ("ID: %d\n", atl.id_atleta); /* Imprime o id */
 
-        gotoxy (30, 15);
         for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
             if (coluna[0][i] == '_') {
                 coluna[0][i] = ' ';
             }
         }
+        gotoxy (30, 15);
         printf ("Nome: %s ", *coluna); /* Imprime o nome */
 
         *coluna = strtok (NULL, ";"); /* Separa a string em colunas guardando o pais */
-        gotoxy (30, 16);
         for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
             if (coluna[0][i] == '_') {
                 coluna[0][i] = ' ';
             }
         }
+        gotoxy (30, 16);
         printf ("Pais: %s\n", *coluna); /* Imprime o pais */
 
         *coluna = strtok (NULL, ";"); /* Separa a string em colunas guardando a modalidade */
-        gotoxy (30, 17);
         for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
             if (coluna[0][i] == '_') {
                 coluna[0][i] = ' ';
             }
         }
+        gotoxy (30, 17);
         printf ("Modalidade: %s\n", *coluna); /* Imprime a modalidade */
 
         gotoxy (30, 20);

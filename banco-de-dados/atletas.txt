@@ -7,3 +7,4 @@
 7;joiciane;vantine;argelia;arco
 8;vinicius_tineu;tineu;brasil;futebol
 9;livia_pimentel;brasil;corrida
+10;vinicius_rodrigues_tineu;nova_zelandia;corrida_de_100m
