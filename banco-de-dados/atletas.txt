@@ -1,3 +1,4 @@
-1;Eduardo;Canada;Esgrima
-2;Vinicius;Congo;Hoquei
-3;Joiciane;Belgica;Atletismo
+1;vinicius;tineu;brasil;atletismo
+2;luca;simaque;mexico;natacao
+3;vinicius;silva;turcomenistao;hipismo
+4;lucas;ferreira;cazaquistao;futebol
