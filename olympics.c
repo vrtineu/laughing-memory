@@ -70,6 +70,7 @@ void cadastrar_atleta () {
     cabecalho ();
 
     int novo_id;
+    int maior_id = 0;
 
     banco_atletas = fopen (".//banco-de-dados//atletas.txt", "r");
     if (banco_atletas == NULL) {
@@ -78,8 +79,11 @@ void cadastrar_atleta () {
     }
     while (!feof (banco_atletas)) {
         fscanf (banco_atletas, "%d;%s;%s;%s\n", &atl.id_atleta, &atl.nome, &atl.pais, &atl.modalidade);
-        novo_id = atl.id_atleta + 1;
+        if (atl.id_atleta > maior_id) {
+            maior_id = atl.id_atleta;
+        }
     }
+    novo_id = maior_id + 1;
     fclose (banco_atletas);
 
     banco_atletas = fopen (".//banco-de-dados//atletas.txt", "a");
@@ -188,7 +192,7 @@ pesquisar:
     cabecalho ();
 
     gotoxy (30, 14);
-    printf ("Digite o id do atleta: ");
+    printf ("Digite o ID do atleta: ");
     fflush (stdin);
     scanf ("%d", &id_busca);
     system ("cls");
@@ -243,6 +247,13 @@ pesquisar:
         }
     }
     fclose (banco_atletas);
+    system ("cls");
+    cabecalho ();
+    gotoxy (30, 14);
+    printf ("Atleta nao encontrado\n");
+    gotoxy (20, 17);
+    system ("pause");
+    system ("cls");
 }
 
 /* Menu de opção para atletas */

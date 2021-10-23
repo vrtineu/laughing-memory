@@ -1,5 +1,7 @@
 1;vinicius;tineu;brasil;atletismo
 2;luca;simaque;mexico;natacao
+6;livia;pimentel;brasil;futebol
 3;vinicius;silva;turcomenistao;hipismo
 4;lucas;ferreira;cazaquistao;futebol
 5;eduardo;assis;canada;arremesso
+7;joiciane;vantine;argelia;arco
