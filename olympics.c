@@ -423,10 +423,11 @@ void atribuicao_medalhas () {
 
     FILE* banco_paises;
 
+    /* Declaração de variáveis */
     int id_edicao = 0;
+    int escolha_edicao;
     char* coluna[100];
     char linha[100];
-    int escolha_edicao;
 
     cabecalho ();
 
@@ -459,66 +460,58 @@ void atribuicao_medalhas () {
     gotoxy (30, 12);
     printf ("* ATRIBUICAO DE MEDALHAS *");
 
-    banco_paises = fopen (".//banco-de-dados//paises.txt", "r+"); /* Abre o arquivo paises.txt */
-    if (banco_paises == NULL) { /* Se o arquivo não for encontrado */
+    /* Abre o arquivo de paises */
+    banco_paises = fopen (".//banco-de-dados//paises.txt", "r+");
+
+    /* Verifica se o arquivo foi aberto */
+    if (banco_paises == NULL) {
         gotoxy (30, 14);
-        printf ("Arquivo nao encontrado\n");
-        gotoxy (20, 17);
+        printf ("Erro ao abrir o arquivo\n");
+        gotoxy (30, 15);
+        printf ("Tente novamente\n");
+        gotoxy (30, 16);
         system ("pause");
         system ("cls");
         menu_ranking ();
     }
 
-    while (!feof (banco_paises)) {
-        fscanf (banco_paises, "%d;%s", &pai.id_pais, &linha); /* Lê a linha */
-        if (pai.id_pais == id_edicao) { /* Se o id for igual ao id digitado */
-            *coluna = strtok (linha, ";"); /* Separa a linha em colunas */
-            for (int i = 0; i < strlen (coluna[0]); i++) { /* Replace de under score para space bar */
-                if (coluna[0][i] == '_') {
-                    coluna[0][i] = ' ';
-                }
-            }
-            gotoxy (30, 14);
-            printf ("Pais: %s", coluna[0]); /* Imprime o nome do pais */
+    while (!feof (banco_paises)) { /* Enquanto não for o fim do arquivo */
+        fgets (linha, 100, banco_paises); /* Lê a linha do arquivo */
+        char* token = strtok (linha, ";"); /* Quebra a linha em tokens */
+        int i = 0;
 
+        while (token != NULL) { /* Enquanto não for o fim do token */
+            coluna[i] = token; /* Coloca o token na posição correta */
+            token = strtok (NULL, ";"); /* Quebra o token */
+            i++;
+        }
+
+        if (atoi (coluna[0]) == id_edicao) { /* Se o id for igual ao id digitado */
             switch (escolha_edicao) { /* Escolha a opção */
                 case 1: /* Ouro */
-                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
-                    gotoxy (30, 16);
-                    printf ("Medalhas de ouro atual: %d", atoi (coluna[0])); /* Imprime a quantidade de medalhas de ouro */
-                    gotoxy (30, 18);
-                    printf ("Digite a nova quantidade de medalhas de ouro: ");
-                    fflush (stdin);
-                    scanf ("%d", &pai.medalha_ouro); /* Recebe a nova quantidade de medalhas de ouro */
+                    coluna[2] = "1";
+                    /* Move to the beggining of the same line */
+                    fseek (banco_paises, -strlen (linha), SEEK_CUR);
+                    /* Update the line */
+                    for (int i = 0; i < 7; i++) {
+                        fputs (coluna[i], banco_paises);
+                        fputc (';', banco_paises);
+                    }
                     break;
 
                 case 2: /* Prata */
-                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
-                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
-                    gotoxy (30, 16);
-                    printf ("Medalhas de prata atual: %d", atoi (coluna[0])); /* Imprime a quantidade de medalhas de prata */
-                    gotoxy (30, 18);
-                    printf ("Digite a nova quantidade de medalhas de prata: ");
-                    fflush (stdin);
-                    scanf ("%d", &pai.medalha_prata); /* Recebe a nova quantidade de medalhas de prata */
+                    coluna[3] = "2";
                     break;
-                
+
                 case 3: /* Bronze */
-                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
-                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
-                    *coluna = strtok (NULL, ";"); /* Separa a linha em colunas */
-                    gotoxy (30, 16);
-                    printf ("Medalhas de bronze atual: %d", atoi (coluna[0])); /* Imprime a quantidade de medalhas de bronze */
-                    gotoxy (30, 18);
-                    printf ("Digite a nova quantidade de medalhas de bronze: ");
-                    fflush (stdin);
-                    scanf ("%d", &pai.medalha_bronze); /* Recebe a nova quantidade de medalhas de bronze */
+                    coluna[4] = "3";
                     break;
             }
-            break;
+        } else {
+            continue;
         }
+        break;
     }
-
     fclose (banco_paises); /* Fecha o arquivo */
 }
 
@@ -558,8 +551,10 @@ void mostrar_dados_usuario () {
 
 /* Função principal do programa. */
 int main () {
-    system ("mode 80, 25"); /* Altera o tamanho da tela */
-    setlocale (LC_ALL, ".UTF8"); /* Altera o idioma para português */
+    /* Cofigurações do terminal */
+    system ("mode 80, 25"); /* Configura o tamanho do console */
+    system ("chcp 65001"); /* Configura o console para utf-8 */
+    system ("cls");
 
     int escolha;
 
@@ -572,13 +567,13 @@ int main () {
         gotoxy (30, 15);
         printf ("[2] RANKING\n");
         gotoxy (30, 16);
-        printf ("[3] CALENDARIO DOS JOGOS\n");
+        printf ("[3] CALENDÁRIO DOS JOGOS\n");
         gotoxy (30, 17);
-        printf ("[4] DADOS DO USUARIO\n");
+        printf ("[4] DADOS DO USUÁRIO\n");
         gotoxy (30, 18);
-        printf ("[0] SAIR DA APLICACAO\n");
+        printf ("[0] SAIR DA APLICAÇÃO\n");
         gotoxy (30, 19);
-        printf ("Escolha uma opcao: ");
+        printf ("Escolha uma opção: ");
         fflush (stdin);
         scanf ("%d", &escolha); /* Lê a opção */
 
@@ -586,7 +581,7 @@ int main () {
             switch (escolha) { /* Escolha a opção */
                 case 0: /* Sair da aplicação */
                     gotoxy (30, 21);
-                    printf ("Encerrando aplicacao\n");
+                    printf ("Encerrando aplicaçao\n");
                     gotoxy (30, 23);
                     exit (0); /* Encerra a aplicação */
                     break;
@@ -619,7 +614,7 @@ int main () {
         } else { /* Se a opção for inválida */
             system ("cls");
             gotoxy (30, 21);
-            printf ("Opcao invalida, tente novamente.\n");
+            printf ("Opção inválida, tente novamente.\n");
         }
     }
     return 0; /* Encerra a aplicação */
