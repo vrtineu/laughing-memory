@@ -1,10 +1,3 @@
-1;vinicius;tineu;brasil;atletismo
-2;luca;simaque;mexico;natacao
-6;livia;pimentel;brasil;futebol
-3;vinicius;silva;turcomenistao;hipismo
-4;lucas;ferreira;cazaquistao;futebol
-5;eduardo;assis;canada;arremesso
-7;joiciane;vantine;argelia;arco
-8;vinicius_tineu;tineu;brasil;futebol
-9;livia_pimentel;brasil;corrida
-10;vinicius_rodrigues_tineu;nova_zelandia;corrida_de_100m
+1;Vinicius_Rodrigues_Tineu;Brasil;Atletismo
+2;Vinicius_Silva_de_Oliveira;Congo;Hipismo
+3;Luca_Simaque_Souza;Mexico;Corrida

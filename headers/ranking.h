@@ -1,0 +1,172 @@
+#pragma once
+
+/* Exibir menu de ranking */
+void menu_ranking() {
+    system("cls");
+
+    int escolha_ranking;
+
+    while (escolha_ranking != 3) {
+        cabecalho();
+        gotoxy(30, 12);
+        printf("* MENU RANKING *");
+        gotoxy(30, 14);
+        printf("[1] RANKING DE PAISES\n");
+        gotoxy(30, 15);
+        printf("[2] ATRIBUIÇÃO DE MEDALHAS\n");
+        gotoxy(30, 16);
+        printf("[3] VOLTAR PARA O MENU PRINCIPAL\n");
+        gotoxy(30, 18);
+        printf("Escolha uma opção: ");
+        fflush(stdin);
+        scanf("%d", &escolha_ranking);
+
+        if (escolha_ranking >= 1 && escolha_ranking <= 3) { /* Se a opção for entre 1 e 2 */
+            switch (escolha_ranking) {                      /* Escolha a opção */
+                case 1:                                     /* Ranking de paises */
+                    system("cls");
+                    ranking_paises();
+                    break;
+
+                case 2: /* Atribuição de medalhas */
+                    system("cls");
+                    atribuicao_medalhas();
+                    break;
+
+                case 3: /* Voltar ao menu principal */
+                    system("cls");
+                    main();
+                    break;
+            }
+        } else { /* Se a opção for inválida */
+            system("cls");
+            gotoxy(30, 21);
+            printf("Opção inválida, tente novamente\n");
+        }
+    }
+}
+
+
+/* Função para edição de medalhas de paises */
+void atribuicao_medalhas() {
+    system("cls");
+
+    FILE* banco_paises;
+
+    /* Declaração de variáveis */
+    int id_edicao = 0;
+    int escolha_edicao;
+    char* coluna[100];
+    char linha[100];
+
+    cabecalho();
+
+    gotoxy(30, 12);
+    printf("* ATRIBUIÇÃO DE MEDALHAS *");
+    gotoxy(30, 14);
+    printf("Digite o ID do país: ");
+    fflush(stdin);
+    scanf("%d", &id_edicao);
+
+    system("cls");
+    cabecalho();
+    gotoxy(30, 12);
+    printf("* ATRIBUIÇÃO DE MEDALHAS *");
+    gotoxy(30, 14);
+    printf("QUAL MEDALHA QUE DESEJA ALTERAR?");
+    gotoxy(30, 16);
+    printf("[1] Ouro\n");
+    gotoxy(30, 17);
+    printf("[2] Prata\n");
+    gotoxy(30, 18);
+    printf("[3] Bronze\n");
+    gotoxy(30, 20);
+    printf("Escolha uma opção: ");
+    fflush(stdin);
+    scanf("%d", &escolha_edicao);
+
+    system("cls");
+    cabecalho();
+    gotoxy(30, 12);
+    printf("* ATRIBUIÇÃO DE MEDALHAS *");
+
+    /* Abre o arquivo de paises */
+    banco_paises = fopen(".//banco-de-dados//paises.txt", "r+");
+
+    /* Verifica se o arquivo foi aberto */
+    if (banco_paises == NULL) {
+        gotoxy(30, 14);
+        printf("Erro ao abrir o arquivo\n");
+        gotoxy(30, 15);
+        printf("Tente novamente\n");
+        gotoxy(30, 16);
+        system("pause");
+        system("cls");
+        menu_ranking();
+    }
+
+    while (!feof(banco_paises)) {         /* Enquanto não for o fim do arquivo */
+        fgets(linha, 100, banco_paises);  /* Lê a linha do arquivo */
+        char* token = strtok(linha, ";"); /* Quebra a linha em tokens */
+        int i = 0;
+
+        while (token != NULL) {        /* Enquanto não for o fim do token */
+            coluna[i] = token;         /* Coloca o token na posição correta */
+            token = strtok(NULL, ";"); /* Quebra o token */
+            i++;
+        }
+
+        if (atoi(coluna[0]) == id_edicao) { /* Se o id for igual ao id digitado */
+            switch (escolha_edicao) {       /* Escolha a opção */
+                case 1:                     /* Ouro */
+                    coluna[2] = "1";
+                    /* Move to the beggining of the same line */
+                    fseek(banco_paises, -strlen(linha), SEEK_CUR);
+                    /* Update the line */
+                    for (int i = 0; i < 7; i++) {
+                        fputs(coluna[i], banco_paises);
+                        fputc(';', banco_paises);
+                    }
+                    break;
+
+                case 2: /* Prata */
+                    coluna[3] = "2";
+                    break;
+
+                case 3: /* Bronze */
+                    coluna[4] = "3";
+                    break;
+            }
+        } else {
+            continue;
+        }
+        break;
+    }
+    fclose(banco_paises); /* Fecha o arquivo */
+}
+
+
+/* Exibe o ranking de paises pela pontuação */
+void ranking_paises() {
+    FILE* paises;
+
+    cabecalho();
+    gotoxy(30, 19);
+
+    paises = fopen(".//banco-de-dados//paises.txt", "r"); /* Abre o arquivo de paises */
+
+    if (paises == NULL) {  // Se o arquivo não existir, cria-o
+        system("cls");
+        cabecalho();
+        gotoxy(27, 14);
+        printf("Erro ao abrir o banco de dados.\n");
+        gotoxy(27, 15);
+        printf("Novo arquivo criado, tente novamente.\n");
+        paises = fopen(".//banco-de-dados//paises.txt", "w"); /* Cria o arquivo */
+        fclose(paises);
+        gotoxy(20, 17);
+        system("pause");
+        menu_atletas();
+    }
+    fclose(paises); /* Fecha o arquivo */
+}
