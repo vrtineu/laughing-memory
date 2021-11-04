@@ -52,7 +52,8 @@ void atribuicao_medalhas() {
     system("cls");
 
     FILE* banco_paises;
-
+    FILE* temp;
+    temp = fopen("replace.tmp", "a"); /* Cria arquivo temporario */
     /* Declaração de variáveis */
     int id_edicao = 0;
     int escolha_edicao;
@@ -117,32 +118,14 @@ void atribuicao_medalhas() {
         }
 
         if (atoi(coluna[0]) == id_edicao) { /* Se o id for igual ao id digitado */
-            switch (escolha_edicao) {       /* Escolha a opção */
-                case 1:                     /* Ouro */
-                    coluna[2] = "1";
-                    /* Move to the beggining of the same line */
-                    fseek(banco_paises, -strlen(linha), SEEK_CUR);
-                    /* Update the line */
-                    for (int i = 0; i < 7; i++) {
-                        fputs(coluna[i], banco_paises);
-                        fputc(';', banco_paises);
-                    }
-                    break;
-
-                case 2: /* Prata */
-                    coluna[3] = "2";
-                    break;
-
-                case 3: /* Bronze */
-                    coluna[4] = "3";
-                    break;
-            }
-        } else {
-            continue;
+            sprintf(coluna[escolha_edicao + 1], "%d", atoi(coluna[escolha_edicao + 1]) + 1); /* Atribui a medalha */
         }
-        break;
+        fprintf(temp, "%s;%s;%s;%s;%s;%s;%s", coluna[0], coluna[1], coluna[2], coluna[3], coluna[4], coluna[5], coluna[6]); /* Escreve no arquivo */
     }
-    fclose(banco_paises); /* Fecha o arquivo */
+    fclose(banco_paises); /* Fecha os arquivos */
+    fclose(temp);
+    remove(".//banco-de-dados//paises.txt");
+    rename("replace.tmp", ".//banco-de-dados//paises.txt");
 }
 
 
