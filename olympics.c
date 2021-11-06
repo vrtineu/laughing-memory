@@ -39,7 +39,7 @@ int main() {
             switch (escolha) {              /* Escolha a opção */
                 case 0:                     /* Sair da aplicação */
                     gotoxy(30, 22);
-                    printf("Encerrando aplicaçao\n");
+                    printf("Encerrando aplicação\n");
                     gotoxy(30, 23);
                     exit(0); /* Encerra a aplicação */
                     break;
