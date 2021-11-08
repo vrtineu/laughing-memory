@@ -247,47 +247,80 @@ void ranking_paises() {
     remove(".//banco-de-dados//ranking.txt"); /* Remove o arquivo de ranking */
     ranking = fopen(".//banco-de-dados//ranking.txt", "w"); /* Cria o arquivo de ranking */
     fclose(ranking);
-    // system("pause");
-
-    char linha[100];
 
     cabecalho();
-
     gotoxy(30, 12);
     printf("* RANKING PAÍSES *");
 
-    /* Abre o arquivo de paises */
     banco_paises = fopen(".//banco-de-dados//paises.txt", "r");
     ranking = fopen(".//banco-de-dados//ranking.txt", "w");
-    
-    int maior_pontuacao = 0;
 
-    for (int i = 0; i < 10; i++) {
-        char linha_ranking[100];
+    while (!feof(banco_paises)) {
+        char* coluna[100];
+        char linha[100];
+        fgets(linha, 100, banco_paises);
+        char* token = strtok(linha, ";");
+        int i = 0;
+
+        while (token != NULL) {
+            coluna[i] = token;
+            token = strtok(NULL, ";");
+            i++;
+        }
+
+        int pontuacao = atoi(coluna[6]);
+        if (pontuacao > 0) {
+            fprintf(ranking, "\n%s;%d", coluna[1], pontuacao);
+
+            // fprintf(ranking, "\n");
+        } else {
+            continue;
+        }
+    }
+    fclose(ranking);                             /* Fecha o arquivo */
+    fclose(banco_paises);                        /* Fecha o arquivo */
         
-        while (!feof(banco_paises)) {            /* Enquanto não for o fim do arquivo */
-            fgets(linha, 100, banco_paises);     /* Lê a linha do arquivo */
-            char* token = strtok(linha, ";");    /* Quebra a linha em tokens */
+    char nome_pais[100];
+    int maior_pontuacao_anterior = 0;
+    for(int i = 0; i < sizeof(ranking); i++) {
+        int maior_pontuacao = 0;
+        ranking = fopen(".//banco-de-dados//ranking.txt", "r");
+
+        while (!feof(ranking)) {
             char* coluna[100];
+            char linha[100];
+            fgets(linha, 100, ranking);
+            char* token = strtok(linha, ";");
             
             int j = 0;
-            while (token != NULL) {              /* Enquanto não for o fim do token */
-                coluna[j] = token;               /* Coloca o token na posição correta */
-                token = strtok(NULL, ";");       /* Quebra o token */
+            while (token != NULL) {
+                coluna[j] = token;
+                token = strtok(NULL, ";");
                 j++;
             }
+            
+            int pontuacao = atoi(coluna[1]);
 
-            if(i == 0) {
-                maior_pontuacao = atoi(coluna[6]);
-                // strcpy(linha_ranking, coluna[1]);
-
-            } else if (maior_pontuacao < atoi(coluna[6])) {   
-                maior_pontuacao = atoi(coluna[6]);
-                strcpy(linha_ranking, coluna[1]);
+            if(i == 0 && pontuacao > maior_pontuacao){
+                maior_pontuacao = pontuacao;
+                strcpy(nome_pais, coluna[0]);
+                // printf("%s;%d\n", nome_pais, maior_pontuacao_anterior);
+            } else if (i != 0 && pontuacao < maior_pontuacao_anterior && pontuacao > maior_pontuacao) {
+                // printf("%s;%d\n", nome_pais, maior_pontuacao_anterior);
+                maior_pontuacao = pontuacao;
+                strcpy(nome_pais, coluna[0]);
+            } else if (i != 0 && pontuacao == maior_pontuacao) {
+                strcat(nome_pais, "\n");
+                strcat(nome_pais, coluna[0]);
             }
-        }
-        fprintf(ranking, "%s\n", linha_ranking); /* Escreve no arquivo */
+        }        
+        gotoxy(30, 14 + i);
+        printf("%s\n", nome_pais);
+        maior_pontuacao_anterior = maior_pontuacao;
+
+        fclose(ranking);                         /* Fecha o arquivo */
     }
-    fclose(banco_paises);                        /* Fecha os arquivos */
-    fclose(ranking);                             /* Fecha os arquivos */
+        system("pause");
+
+    main();
 }
