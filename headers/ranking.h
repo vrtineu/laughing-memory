@@ -240,10 +240,12 @@ void remover_medalha() {
 /* Função para construir ranking dos paises conforme a pontuação */
 void ranking_paises() {
     system("cls");
-
     FILE* banco_paises;
     FILE* ranking;
+    FILE* ranking_ordenado;
 
+    /* Limpa o arquivo de ranking.txt */
+    
     remove(".//banco-de-dados//ranking.txt"); /* Remove o arquivo de ranking */
     ranking = fopen(".//banco-de-dados//ranking.txt", "w"); /* Cria o arquivo de ranking */
     fclose(ranking);
@@ -252,9 +254,11 @@ void ranking_paises() {
     gotoxy(30, 12);
     printf("* RANKING PAÍSES *");
 
+    /* Popula o arquivo de ranking.txt */
+   
     banco_paises = fopen(".//banco-de-dados//paises.txt", "r");
     ranking = fopen(".//banco-de-dados//ranking.txt", "w");
-
+    int count = 0;
     while (!feof(banco_paises)) {
         char* coluna[100];
         char linha[100];
@@ -270,21 +274,24 @@ void ranking_paises() {
 
         int pontuacao = atoi(coluna[6]);
         if (pontuacao > 0) {
-            fprintf(ranking, "\n%s;%d", coluna[1], pontuacao);
-
-            // fprintf(ranking, "\n");
-        } else {
-            continue;
+            if(count != 0) {
+                fprintf(ranking, "\n");
+            }
+            fprintf(ranking, "%s;%d", coluna[1], pontuacao);
         }
+        count++;
     }
     fclose(ranking);                             /* Fecha o arquivo */
     fclose(banco_paises);                        /* Fecha o arquivo */
-        
+
+    /* Ordena o arquivo de ranking.txt em ranking-ordenado.txt */
+    
     char nome_pais[100];
     int maior_pontuacao_anterior = 0;
     for(int i = 0; i < sizeof(ranking); i++) {
         int maior_pontuacao = 0;
         ranking = fopen(".//banco-de-dados//ranking.txt", "r");
+        ranking_ordenado = fopen(".//banco-de-dados//ranking-ordenado.txt", "a");
 
         while (!feof(ranking)) {
             char* coluna[100];
@@ -304,23 +311,67 @@ void ranking_paises() {
             if(i == 0 && pontuacao > maior_pontuacao){
                 maior_pontuacao = pontuacao;
                 strcpy(nome_pais, coluna[0]);
-                // printf("%s;%d\n", nome_pais, maior_pontuacao_anterior);
             } else if (i != 0 && pontuacao < maior_pontuacao_anterior && pontuacao > maior_pontuacao) {
-                // printf("%s;%d\n", nome_pais, maior_pontuacao_anterior);
                 maior_pontuacao = pontuacao;
                 strcpy(nome_pais, coluna[0]);
             } else if (i != 0 && pontuacao == maior_pontuacao) {
-                strcat(nome_pais, "\n");
+                strcat(nome_pais, ";");
                 strcat(nome_pais, coluna[0]);
             }
         }        
-        gotoxy(30, 14 + i);
-        printf("%s\n", nome_pais);
         maior_pontuacao_anterior = maior_pontuacao;
+        printf("%s\n", nome_pais, maior_pontuacao);
+        if (i != 0) {
+            fputs(";", ranking_ordenado);
+        }
+        fputs(nome_pais, ranking_ordenado);
+        fclose(ranking);
+        fclose(ranking_ordenado);
+    }        
+    exibe_ranking();
+    menu_ranking();
+}
 
-        fclose(ranking);                         /* Fecha o arquivo */
+/* Função para exibir o ranking */
+void exibe_ranking() {
+    system("cls");
+    cabecalho();
+    gotoxy(30, 12);
+    printf("* RANKING PAÍSES *");
+
+    FILE* ranking_ordenado;
+    ranking_ordenado = fopen(".//banco-de-dados//ranking-ordenado.txt", "r");
+
+
+    char* coluna[100];
+    char linha[100];
+    
+    fgets(linha, 100, ranking_ordenado);
+    char* token = strtok(linha, ";");
+
+    int i = 0;
+    while (token != NULL) {
+        coluna[i] = token;
+        token = strtok(NULL, ";");
+        i++;
     }
-        system("pause");
+    
+    for(int j = 0; j < i; j++) {
+        for (int k = 0; k < strlen(coluna[j]); k++) { /* Replace de under score para space bar */
+            if (coluna[j][k] == '_') {
+                // printf("%s\n", coluna[j]);
+                coluna[j][k] = ' ';
+            }
+            // system("pause");
+        }
+        gotoxy(30, 14 + j);
+        printf("%s\n", coluna[j]);
+    }
 
-    main();
+    fclose(ranking_ordenado);
+    remove(".//banco-de-dados//ranking-ordenado.txt");
+    ranking_ordenado = fopen(".//banco-de-dados//ranking-ordenado.txt", "w");
+    fclose(ranking_ordenado);
+    gotoxy(25, 33);
+    system("pause");
 }

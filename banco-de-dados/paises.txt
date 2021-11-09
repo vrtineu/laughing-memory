@@ -1,8 +1,8 @@
-1;Republica_Popular_da_China;2;1;0;0;8
+1;Republica_Popular_da_China;2;1;2;0;10
 2;India;1;0;0;0;3
 3;Estados_Unidos;1;0;0;0;3
 4;Indonesia;1;0;0;0;3
-5;Brasil;3;0;0;0;9
+5;Brasil;4;0;0;0;12
 6;Paquistao;0;0;0;0;0
 7;Nigeria;0;0;0;0;0
 8;Bangladesh;0;0;0;0;0
