@@ -4,3 +4,4 @@ Estados_Unidos;3
 Indonesia;3
 Brasil;12
 Russia;5
+Australia;3

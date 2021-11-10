@@ -9,7 +9,7 @@ void menu_atletas() {
 
     while (escolha_atletas != 4) {
         cabecalho();
-        gotoxy(30, 12);
+        gotoxy(36, 12);
         printf("* MENU ATLETAS *");
         gotoxy(30, 14);
         printf("[1] LISTAR ATLETAS\n");
@@ -42,7 +42,7 @@ void menu_atletas() {
                     break;
 
                 case 4: /* Voltar ao menu principal */
-                    main();
+                    menu_principal();
                     break;
             }
         } else { /* Se a opção for inválida */

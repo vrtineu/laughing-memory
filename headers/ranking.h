@@ -8,7 +8,7 @@ void menu_ranking() {
 
     while (escolha_ranking != 3) {
         cabecalho();
-        gotoxy(30, 12);
+        gotoxy(36, 12);
         printf("* MENU RANKING *");
         gotoxy(30, 14);
         printf("[1] RANKING DE PAISES\n");
@@ -42,7 +42,7 @@ void menu_ranking() {
 
                 case 4: /* Voltar ao menu principal */
                     system("cls");
-                    main();
+                    menu_principal();
                     break;
             }
         } else { /* Se a opção for inválida */
@@ -78,7 +78,7 @@ void atribuicao_medalhas() {
 
     system("cls");
     cabecalho();
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* ATRIBUIÇÃO DE MEDALHAS *");
     gotoxy(30, 14);
     printf("QUAL MEDALHA QUE DESEJA ATRIBUIR?");
@@ -95,7 +95,7 @@ void atribuicao_medalhas() {
 
     system("cls");
     cabecalho();
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* ATRIBUIÇÃO DE MEDALHAS *");
 
     /* Abre o arquivo de paises */
@@ -160,7 +160,7 @@ void remover_medalha() {
 
     cabecalho();
 
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* REMOVER MEDALHA *");
     gotoxy(30, 14);
     printf("Digite o ID do país: ");
@@ -169,7 +169,7 @@ void remover_medalha() {
 
     system("cls");
     cabecalho();
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* REMOVER MEDALHA *");
     gotoxy(30, 14);
     printf("QUAL MEDALHA QUE DESEJA REMOVER?");
@@ -186,7 +186,7 @@ void remover_medalha() {
 
     system("cls");
     cabecalho();
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* REMOVER MEDALHA *");
 
     /* Abre o arquivo de paises */
@@ -251,7 +251,7 @@ void ranking_paises() {
     fclose(ranking);
 
     cabecalho();
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* RANKING PAÍSES *");
 
     /* Popula o arquivo de ranking.txt */
@@ -336,7 +336,7 @@ void ranking_paises() {
 void exibe_ranking() {
     system("cls");
     cabecalho();
-    gotoxy(30, 12);
+    gotoxy(36, 12);
     printf("* RANKING PAÍSES *");
 
     FILE* ranking_ordenado;
@@ -359,12 +359,12 @@ void exibe_ranking() {
     for(int j = 0; j < i; j++) {
         for (int k = 0; k < strlen(coluna[j]); k++) { /* Replace de under score para space bar */
             if (coluna[j][k] == '_') {
-                // printf("%s\n", coluna[j]);
                 coluna[j][k] = ' ';
             }
-            // system("pause");
         }
-        gotoxy(30, 14 + j);
+        gotoxy(31, 14 + j);
+        printf("%dº -", j + 1);
+        gotoxy(36, 14 + j);
         printf("%s\n", coluna[j]);
     }
 
@@ -372,6 +372,6 @@ void exibe_ranking() {
     remove(".//banco-de-dados//ranking-ordenado.txt");
     ranking_ordenado = fopen(".//banco-de-dados//ranking-ordenado.txt", "w");
     fclose(ranking_ordenado);
-    gotoxy(25, 33);
+    gotoxy(27, 33);
     system("pause");
 }

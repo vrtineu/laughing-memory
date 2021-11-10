@@ -52,7 +52,7 @@
 52;Siria;0;0;0;0;0
 53;Madagascar;0;0;0;0;0
 54;Romenia;0;0;0;0;0
-55;Australia;0;0;0;0;0
+55;Australia;1;0;0;0;3
 56;Costa_do_Marfim;0;0;0;0;0
 57;Sri_Lanka;0;0;0;0;0
 58;Camaroes;0;0;0;0;0
