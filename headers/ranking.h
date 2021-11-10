@@ -236,6 +236,27 @@ void remover_medalha() {
     rename("replace.tmp", ".//banco-de-dados//paises.txt");
 }
 
+int contar_linhas(char arquivo[200]) {
+    FILE* arq;
+
+    char linha[100];
+    int contador = 0;
+
+    arq = fopen(arquivo, "r");
+
+    if (arq == NULL) {
+        printf("Erro ao abrir o arquivo\n");
+        printf("Tente novamente\n");
+        system("pause");
+    }
+
+    while (!feof(arq)) {
+        fgets(linha, 100, arq);
+        contador++;
+    }
+    fclose(arq);
+    return contador;
+}
 
 /* Função para construir ranking dos paises conforme a pontuação */
 void ranking_paises() {
@@ -251,7 +272,7 @@ void ranking_paises() {
     fclose(ranking);
 
     cabecalho();
-    gotoxy(36, 12);
+    gotoxy(36, 10);
     printf("* RANKING PAÍSES *");
 
     /* Popula o arquivo de ranking.txt */
@@ -284,16 +305,19 @@ void ranking_paises() {
     fclose(ranking);                             /* Fecha o arquivo */
     fclose(banco_paises);                        /* Fecha o arquivo */
 
-    /* Ordena o arquivo de ranking.txt em ranking-ordenado.txt */
+    int tamanho_ranking = contar_linhas(".//banco-de-dados//ranking.txt");
     
+    /* Ordena o arquivo de ranking.txt em ranking-ordenado.txt */
+
     char nome_pais[100];
     int maior_pontuacao_anterior = 0;
-    for(int i = 0; i < sizeof(ranking); i++) {
+    for(int i = 0; i < tamanho_ranking; i++) {
         int maior_pontuacao = 0;
         ranking = fopen(".//banco-de-dados//ranking.txt", "r");
         ranking_ordenado = fopen(".//banco-de-dados//ranking-ordenado.txt", "a");
 
         while (!feof(ranking)) {
+            if (i == 21) break;
             char* coluna[100];
             char linha[100];
             fgets(linha, 100, ranking);
@@ -307,7 +331,6 @@ void ranking_paises() {
             }
             
             int pontuacao = atoi(coluna[1]);
-
             if(i == 0 && pontuacao > maior_pontuacao){
                 maior_pontuacao = pontuacao;
                 strcpy(nome_pais, coluna[0]);
@@ -317,6 +340,7 @@ void ranking_paises() {
             } else if (i != 0 && pontuacao == maior_pontuacao) {
                 strcat(nome_pais, ";");
                 strcat(nome_pais, coluna[0]);
+                i++;
             }
         }        
         maior_pontuacao_anterior = maior_pontuacao;
@@ -336,17 +360,17 @@ void ranking_paises() {
 void exibe_ranking() {
     system("cls");
     cabecalho();
-    gotoxy(36, 12);
+    gotoxy(36, 10);
     printf("* RANKING PAÍSES *");
 
     FILE* ranking_ordenado;
     ranking_ordenado = fopen(".//banco-de-dados//ranking-ordenado.txt", "r");
 
 
-    char* coluna[100];
-    char linha[100];
+    char* coluna[1000];
+    char linha[1000];
     
-    fgets(linha, 100, ranking_ordenado);
+    fgets(linha, 1000, ranking_ordenado);
     char* token = strtok(linha, ";");
 
     int i = 0;
@@ -362,9 +386,9 @@ void exibe_ranking() {
                 coluna[j][k] = ' ';
             }
         }
-        gotoxy(31, 14 + j);
+        gotoxy(31, 12 + j);
         printf("%dº -", j + 1);
-        gotoxy(36, 14 + j);
+        gotoxy(36, 12 + j);
         printf("%s\n", coluna[j]);
     }
 
