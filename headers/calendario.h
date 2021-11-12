@@ -1,7 +1,5 @@
 #pragma once
 
-#define MAX 50
-
 /* Menu de opção para o calendario */
 void menu_calendario()
 {
@@ -31,20 +29,20 @@ void menu_calendario()
         if (escolha_calendario >= 1 && escolha_calendario <= 4)
         { /* Se a opção for entre 1 e 4 */
             switch (escolha_calendario)
-            {                                            
-            case 1: /* Lista todas as datas dos jogos */ 
+            {
+            case 1: /* Lista todas as datas dos jogos */
                 system("cls");
-                listar_Todas_Datas(ano);
+                listar_todas_datas(ano);
                 break;
 
             case 2: /* Consultar Dia */
                 system("cls");
-                menu_Editar(ano);
+                menu_editar(ano);
                 break;
 
             case 3: /* Cadastrar nova data */
                 system("cls");
-                cadastrar_Data_Jogo();
+                cadastrar_data_jogo();
                 break;
 
             case 4: /* Voltar ao menu principal */
@@ -62,14 +60,13 @@ void menu_calendario()
 }
 
 /* Cadastrar nova data das olimpiadas */
-void cadastrar_Data_Jogo()
+void cadastrar_data_jogo()
 {
     system("cls");
     int ano = 2024;
     int dia, mes;
     char esporte[MAX];
     int escolha_cadastrar;
-    
 
     // cadastro de nova data
     cabecalho();
@@ -98,19 +95,19 @@ void cadastrar_Data_Jogo()
 
     if (escolha_cadastrar == 1)
     {
-        salvar_Data(dia, mes, esporte, ano);
+        salvar_data(dia, mes, esporte, ano);
     }
     else
     {
         menu_calendario();
     }
-    
 }
 
-void salvar_Data(int dia, int mes, char esporte[MAX], int ano){
+void salvar_data(int dia, int mes, char esporte[MAX], int ano)
+{
 
     FILE *arquivo;
-    arquivo = fopen("calendario.txt", "a");
+    arquivo = fopen(".//banco-de-dados//calendario.txt", "a");
     if (arquivo == NULL)
     {
         printf("Erro ao abrir o arquivo\n");
@@ -122,14 +119,14 @@ void salvar_Data(int dia, int mes, char esporte[MAX], int ano){
 }
 
 /* Listar todas as datas dos jogos */
-void listar_Todas_Datas(int ano)
+void listar_todas_datas(int ano)
 {
     system("cls");
     int dia, mes;
     char esporte[MAX];
     int i = 0;
     FILE *arquivo;
-    arquivo = fopen("calendario.txt", "r");
+    arquivo = fopen(".//banco-de-dados//calendario.txt", "r");
     if (arquivo == NULL)
     {
         printf("Erro ao abrir o arquivo\n");
@@ -142,6 +139,7 @@ void listar_Todas_Datas(int ano)
         {
             printf("%d/%d/%d %s\n", dia, mes, ano, esporte);
             i++;
+            system("pause");
         }
     }
     fclose(arquivo);
@@ -153,14 +151,14 @@ void listar_Todas_Datas(int ano)
 }
 
 /* Excluir ou Editar data */
-void menu_Editar(int ano)
+void menu_editar(int ano)
 {
     system("cls");
     int dia, mes;
     char esporte[MAX];
     int i = 0;
     FILE *arquivo;
-    arquivo = fopen("calendario.txt", "r");
+    arquivo = fopen(".//banco-de-dados//calendario.txt", "r");
     if (arquivo == NULL)
     {
         printf("Erro ao abrir o arquivo\n");
@@ -236,7 +234,7 @@ void menu_Editar(int ano)
 
                 if (escolha_editar == 1)
                 {
-                    editar_Data_Jogo(dia_editar, mes_editar, esporte_editar);
+                    editar_data_jogo(dia_editar, mes_editar, esporte_editar);
                 }
                 else
                 {
@@ -272,7 +270,7 @@ void menu_Editar(int ano)
 
                 if (escolha_excluir == 1)
                 {
-                    excluir_Data_Jogo(dia_excluir, mes_excluir, esporte_excluir);
+                    excluir_data_jogo(dia_excluir, mes_excluir, esporte_excluir);
                 }
                 else
                 {
@@ -286,7 +284,7 @@ void menu_Editar(int ano)
 
             default:
                 printf("Opção inválida\n");
-                editar_Data(ano);
+                // editar_data(ano);
                 break;
             }
         } while (escolha_editar != 3);
@@ -294,7 +292,7 @@ void menu_Editar(int ano)
 }
 
 /* Editar data */
-void editar_Data_Jogo(int dia, int mes, char esporte[MAX])
+void editar_data_jogo(int dia, int mes, char esporte[MAX])
 {
     int diacmp, mescmp, anocmp;
     char esportecmp[MAX];
@@ -343,17 +341,13 @@ void editar_Data_Jogo(int dia, int mes, char esporte[MAX])
             fclose(arquivo_temp);
             remove(".//banco-de-dados//calendario.txt");
             rename("calendario_temp.txt", ".//banco-de-dados//calendario.txt");
-        {
-            
         }
+        fclose(arquivo);
     }
-    fclose(arquivo);
-    
 }
-}
-            
+
 /* Excluir data */
-void excluir_Data_Jogo(int dia, int mes, char esporte[MAX])
+void excluir_data_jogo(int dia, int mes, char esporte[MAX])
 {
     int diacmp, mescmp, anocmp;
     char esportecmp[MAX];
@@ -402,4 +396,3 @@ void excluir_Data_Jogo(int dia, int mes, char esporte[MAX])
     }
     fclose(arquivo);
 }
-

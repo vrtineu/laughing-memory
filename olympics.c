@@ -9,6 +9,7 @@
 #include ".//headers//principal.h"
 #include ".//headers//atletas.h"
 #include ".//headers//ranking.h"
+#include ".//headers//calendario.h"
 
 
 /* Função principal do programa. */

@@ -47,8 +47,7 @@ void menu_principal() {
                 case 3: /* Calendário */
                     system("cls");
                     gotoxy(30, 22);
-                    printf("calendario (WIP)");
-                    // menu_calendario ();
+                    menu_calendario ();
                     break;
 
                 case 4: /* Dados do usuário */
