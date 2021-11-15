@@ -36,3 +36,24 @@ void cabecalho() {
     gotoxy(23, 8);
     printf("         |___/          |_|               \n");
 }
+
+void cabecalho_login() {
+    gotoxy(17,2);
+    printf("      .,::OOO::,.     .,ooOOOoo,.     .,::OOO::,.");
+    gotoxy(17,3);
+    printf("    .:'         `:. .8'         `8. .:'         `:.");
+    gotoxy(17,4);
+    printf("    :\"           \": 8\"           \"8 :\"           \":");
+    gotoxy(17,5);
+    printf("    :,        .,:::\"\"::,.     .,:o8OO::,.        ,:");
+    gotoxy(17,6);
+    printf("     :,,    .:' ,:   8oo`:. .:'oo8   :,,`:.    ,,:");
+    gotoxy(17,7);
+    printf("      `^OOoo:\"O^'     `^88oo:\"8^'     `^O\":ooOO^'");
+    gotoxy(17,8);
+    printf("            :,           ,: :,           ,:           ");
+    gotoxy(17,9);
+    printf("             :,,       ,,:   :,,       ,,:");
+    gotoxy(17,10);
+    printf("              `^Oo,,,oO^'     `^OOoooOO^'");
+}
