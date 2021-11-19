@@ -16,15 +16,13 @@ void menu_principal() {
         gotoxy(30, 16);
         printf("[3] CALENDÁRIO DOS JOGOS\n");
         gotoxy(30, 17);
-        printf("[4] DADOS DO USUÁRIO\n");
-        gotoxy(30, 18);
         printf("[0] SAIR DA APLICAÇÃO\n");
-        gotoxy(30, 20);
+        gotoxy(30, 19);
         printf("Escolha uma opção: ");
         fflush(stdin);
         scanf("%d", &escolha); /* Lê a opção */
 
-        if (escolha >= 0 && escolha <= 4) { /* Se a opção for entre 0 e 4 */
+        if (escolha >= 0 && escolha <= 3) { /* Se a opção for entre 0 e 4 */
             switch (escolha) {              /* Escolha a opção */
                 case 0:                     /* Sair da aplicação */
                     gotoxy(30, 22);
@@ -48,13 +46,6 @@ void menu_principal() {
                     system("cls");
                     gotoxy(30, 22);
                     menu_calendario ();
-                    break;
-
-                case 4: /* Dados do usuário */
-                    system("cls");
-                    gotoxy(30, 22);
-                    printf("user (WIP)");
-                    // mostrar_dados_usuario ();
                     break;
             }
         } else { /* Se a opção for inválida */

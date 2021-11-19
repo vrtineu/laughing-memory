@@ -56,21 +56,21 @@ void cadastro() {
     gotoxy(37, 16);
     printf("Nome: ");
     fflush(stdin);
-    scanf("%s", &usr.nome);
+    scanf("%s", &nome);
     gotoxy(37, 17);
     printf("Email: ");
     fflush(stdin);
-    scanf("%s", &usr.email);
+    scanf("%s", &email);
     gotoxy(37, 18);
     printf("Usuário: ");
     fflush(stdin);
-    scanf("%s", &usr.usuario);
+    scanf("%s", &usuarioLogin);
     gotoxy(37, 19);
     printf("Senha: ");
     fflush(stdin);
-    scanf("%s", &usr.senha);
+    scanf("%s", &senhaLogin);
 
-    arquivo = fopen(".//banco-de-dados//usuarios.bin", "rb");
+    arquivo = fopen(".//banco-de-dados//usuarios.txt", "r");
 
     while(!feof(arquivo)) {
         fread(&usr, sizeof(usr), 1, arquivo);
@@ -82,12 +82,13 @@ void cadastro() {
     fclose(arquivo);
 
     if(existe == 0) {
-        arquivo = fopen(".//banco-de-dados//usuarios.bin", "ab");
-        fprintf(arquivo, "%s %s %s %s\n", usr.nome, usr.email, usr.usuario, usr.senha);
+        arquivo = fopen(".//banco-de-dados//usuarios.txt", "a");
+        fprintf(arquivo, "%s %s %s %s\n", nome, email, usuarioLogin, senhaLogin);
         fclose(arquivo);
         gotoxy(37, 22);
         printf("Cadastro realizado com sucesso!");
         Sleep(3700);
+        menu_login();
     }
     else {
         gotoxy(37, 22);
@@ -116,15 +117,12 @@ int login() {
     fflush(stdin);
     scanf("%s", &usr.senha);
 
-    arquivo = fopen(".//banco-de-dados//usuarios.bin", "rb");
+    arquivo = fopen(".//banco-de-dados//usuarios.txt", "r");
 
     while(!feof(arquivo)) {
         fscanf(arquivo, "%s %s %s %s\n", nome, email, usuarioLogin, senhaLogin);
         if(strcmp(usr.usuario, usuarioLogin) == 0 && strcmp(usr.senha, senhaLogin) == 0) {
             login = 1;
-            usr.nome = nome;
-            usr.email = email;
-            usr.usuario = usuarioLogin;
             break;
         }
     }
