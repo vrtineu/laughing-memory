@@ -73,8 +73,8 @@ void cadastro() {
     arquivo = fopen(".//banco-de-dados//usuarios.txt", "r");
 
     while(!feof(arquivo)) {
-        fread(&usr, sizeof(usr), 1, arquivo);
-        if(strcmp(usr.usuario, usuarioLogin) == 0) {
+        fscanf(arquivo, "%s %s %s %s\n", usr.nome, usr.email, usr.usuario, usr.senha);
+        if(strcmp(usuarioLogin, usr.usuario) == 0) {
             existe = 1;
             break;
         }
