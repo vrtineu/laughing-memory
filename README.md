@@ -1,4 +1,4 @@
-# laughing-memory
+# Olympics
 
 ## Projeto Integrado Multidisciplinar
 O projeto consiste em uma aplicação console totalmente em linguagem C, para que em simulação seja usado na organização das Olimpíadas de Paris em 2024.
